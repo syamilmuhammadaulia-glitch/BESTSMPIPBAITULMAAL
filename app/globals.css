@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #020617;
+  --foreground: #ffffff;
+}
+
+body {
+  /* Gradien gelap dengan nuansa ungu di pojok sesuai video */
+  background: radial-gradient(circle at 0% 0%, #1e1b4b 0%, #020617 50%),
+    radial-gradient(circle at 100% 100%, #4c1d95 0%, #020617 50%);
+  background-attachment: fixed;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Efek Kaca (Glassmorphism) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem; /* Sangat bulat sesuai video */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Scrollbar biar tipis dan keren */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #4c1d95;
+  border-radius: 10px;
+}
