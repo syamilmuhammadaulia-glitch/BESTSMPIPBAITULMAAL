@@ -13,7 +13,7 @@ import {
 
 export default function InfoPendaftaran() {
   const linkPendaftaran =
-    "https://docs.google.com/forms/d/e/1FAIpQLSdwCmavhaGAUy01X9ZPqHcVxoQtYobliZ6fS51uZEXCExmSxg/viewform?usp=dialog";
+    "https://script.google.com/macros/s/AKfycbxJy1rCEX7rwFg8HgQXvloAkvJHL-CcpFBx_X1j5NnX_iOZQPmsou2h35wh6Yg6wTg/exec";
 
   const targetDate = new Date("2026-08-24T08:00:00");
   const [isOpened, setIsOpened] = useState(false);
@@ -88,10 +88,10 @@ export default function InfoPendaftaran() {
             <div className="bg-slate-200 p-8 rounded-[2rem] text-center border-2 border-dashed border-slate-300">
               <Lock size={40} className="mx-auto text-slate-400 mb-4" />
               <p className="text-slate-500 font-bold uppercase text-xs tracking-[0.2em]">
-                Pendaftaran akan otomatis terbuka pada:
+                Jadwal Pendaftaran:
               </p>
-              <p className="text-slate-800 font-black text-xl mt-2">
-                24 Agustus 2026
+              <p className="text-slate-800 font-black text-xl mt-2 uppercase">
+                Info menyusul lebih lanjut
               </p>
             </div>
           ) : (
@@ -112,7 +112,7 @@ export default function InfoPendaftaran() {
 
           {/* FAQ SECTION */}
           <section className="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm">
-            <h2 className="text-2xl font-black text-center mb-10 uppercase italic">
+            <h2 className="text-2xl font-black text-center mb-10 uppercase italic text-slate-900">
               Tanya <span className="text-blue-600">Jawab</span>
             </h2>
             <div className="space-y-4">
@@ -127,7 +127,7 @@ export default function InfoPendaftaran() {
                 },
                 {
                   q: "Apa saja tesnya?",
-                  a: "Tes tertulis online dan wawancara tatap muka.",
+                  a: "Pemberkasan dan wawancara tatap muka.",
                 },
                 {
                   q: "Apakah siswa kelas 9 boleh mendaftar?",
@@ -178,11 +178,11 @@ export default function InfoPendaftaran() {
                   transition={{ delay: i * 0.05 }}
                   className="group bg-slate-50 rounded-2xl p-4 cursor-pointer hover:bg-slate-100 transition-colors"
                 >
-                  <summary className="font-black text-[11px] uppercase tracking-wider list-none flex justify-between items-center outline-none">
+                  <summary className="text-slate-900 font-black text-[11px] uppercase tracking-wider list-none flex justify-between items-center outline-none">
                     {faq.q}
                     <ChevronDown
                       size={14}
-                      className="group-open:rotate-180 transition-transform"
+                      className="text-slate-500 group-open:rotate-180 transition-transform"
                     />
                   </summary>
                   <p className="mt-3 text-[10px] font-bold text-slate-500 leading-relaxed uppercase">

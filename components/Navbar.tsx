@@ -35,7 +35,7 @@ export default function Navbar() {
     { name: "Tentang", id: "tentang" },
     { name: "Statistik", id: "statistik" },
     { name: "Berita", id: "berita" },
-    { name: "Event", id: "event" },
+    { name: "Proker", id: "proker" },
     { name: "Struktur", id: "struktur" },
     { name: "FAQ", id: "faq" },
   ];
@@ -46,7 +46,7 @@ export default function Navbar() {
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
           <img
-            src="/logo.png"
+            src="/logo.jpeg"
             alt="Logo"
             className="w-10 h-10 object-contain"
           />

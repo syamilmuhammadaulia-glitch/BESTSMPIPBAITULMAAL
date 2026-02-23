@@ -1,6 +1,6 @@
 "use client";
-import { motion, Variants } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -8,48 +8,268 @@ import {
   Target,
   Award,
   Bell,
-  Calendar,
   Star,
   Info,
   ChevronDown,
 } from "lucide-react";
 
-interface LandingProps {
-  onEnterPortal?: () => void;
-}
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5 },
-  },
-};
-
-export default function LandingPage({ onEnterPortal }: LandingProps) {
+export default function LandingPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // --- DATA PROKER OSIS ---
+  const dataProker = [
+    {
+      dept: "BPH",
+      proker: [
+        {
+          nama: "Official Look Project",
+          desc: "Pembuatan blazer dan ID card resmi anggota setelah pelantikan.",
+          status: "Completed",
+        },
+        {
+          nama: "First Gathering",
+          desc: "Kegiatan kebersamaan anggota osis dan presentasi proker saat berbuka puasa serta bermain games untuk melatih kekompakan.",
+          status: "Completed",
+        },
+        {
+          nama: "BestPay",
+          desc: "Pembayaran kas bulanan untuk kebutuhan kegiatan OSIS.",
+          status: "Completed",
+        },
+        {
+          nama: "Monthly Eval",
+          desc: "Evaluasi rutin untuk membahas permasalahan dan solusi yang terjadi di setiap bulannya.",
+          status: "On Going",
+        },
+        {
+          nama: "Baitul Maal Frequency",
+          desc: "Podcast OSIS bersama guest star dari alumni maupun siswa berprestasi untuk meningkatkan pemahaman dan wawasan siswa.",
+          status: "Upcoming",
+        },
+        {
+          nama: "Workshop BEST OSIS",
+          desc: "Workshop pengembangan diri untuk anggota OSIS yang membahas tentang passion dan public speaking.",
+          status: "Completed",
+        },
+        {
+          nama: "BEST on Vlog",
+          desc: "Vlog dokumentasi persiapan kegiatan OSIS.",
+          status: "Upcoming",
+        },
+        {
+          nama: "Interest Club",
+          desc: "Klub minat bakat dengan pameran karya di akhir semester.",
+          status: "Upcoming",
+        },
+        {
+          nama: "Berbuka Puasa Bersama",
+          desc: "Kegiatan buka puasa dan kebersamaan.",
+          status: "Upcoming",
+        },
+        {
+          nama: "MPLS",
+          desc: "Partisipasi OSIS dalam Masa Pengenalan Lingkungan Sekolah.",
+          status: "Upcoming",
+        },
+        {
+          nama: "BEST of The Month",
+          desc: "Apresiasi bulanan bagi anggota terbaik.",
+          status: "Upcoming",
+        },
+      ],
+    },
+    {
+      dept: "Departemen Agama",
+      proker: [
+        {
+          nama: "Jadwal KSP & Shalat Kelas",
+          desc: "Pembuatan dan pengingat jadwal KSP serta shalat tiap kelas.",
+          status: "On Going",
+        },
+        {
+          nama: "Langkah Kecil, Pahala Besar",
+          desc: "Penempelan doa harian di area strategis sekolah.",
+          status: "Upcoming",
+        },
+        {
+          nama: "SENJA",
+          desc: "Sehatnya Nikmat Jumat Ceria. Berbagi makanan sehat kepada warga sekitar. (Kolaborasi dengan Humas).",
+          status: "Upcoming",
+        },
+        {
+          nama: "SABI",
+          desc: "Syiar Agama Berita Islami. Publikasi dan peringatan Hari Besar Islam.",
+          status: "Completed",
+        },
+      ],
+    },
+    {
+      dept: "Departemen SABDA",
+      proker: [
+        {
+          nama: "BIZ (Baitul Maal Quiz)",
+          desc: "Program kuis interaktif tentang pengetahuan umum secara menyenangkan dan edukatif.",
+          status: "On Going",
+        },
+        {
+          nama: "BaiMalPedia",
+          desc: "Memberikan poster edukatif yang nantinya akan dibuat quiz (BIZ) yang akan bermanfaat bagi pengetahuan siswa/i.",
+          status: "On Going",
+        },
+        {
+          nama: "Sharing Bakmi",
+          desc: "Membacakan berita menarik dan memutar lagu di jam makan siang setiap hari rabu untuk menambah wawasan dengan cara asik.",
+          status: "On Going",
+        },
+        {
+          nama: "BEST Gathering",
+          desc: "Kegiatan kebersamaan untuk mempererat solidaritas dan kekompakan pengurus di akhir masa jabatan.",
+          status: "Upcoming",
+        },
+        {
+          nama: "Unleash Your Talent",
+          desc: "Ajang perlombaan akademik dan non-akademik untuk mengembangkan potensi siswa.",
+          status: "Upcoming",
+        },
+        {
+          nama: "Membuat Poster",
+          desc: "Pembuatan poster edukatif untuk memperingati hari nasional.",
+          status: "On Going",
+        },
+      ],
+    },
+    {
+      dept: "Departemen Disorkes",
+      proker: [
+        {
+          nama: "Sarapan Sehat",
+          desc: "Sarapan bersama setiap Jumat untuk membiasakan hidup sehat.",
+          status: "On Going",
+        },
+        {
+          nama: "KBT (Kegiatan Bada Tes)",
+          desc: "Lomba olahraga antar kelas untuk mengembangkan bakat dan kekompakan.",
+          status: "Completed",
+        },
+        {
+          nama: "Fisik Motorik",
+          desc: "Olahraga rutin untuk melatih kemampuan fisik siswa.",
+          status: "On Going",
+        },
+        {
+          nama: "CEPAK",
+          desc: "Pemeriksaan kerapian pakaian dan alas kaki.",
+          status: "On Going",
+        },
+        {
+          nama: "Discipline in Action",
+          desc: "Poster & video edukasi tentang disiplin, kesehatan, dan anti-bullying.",
+          status: "On Going",
+        },
+        {
+          nama: "Unleash Your Talent!",
+          desc: "Lomba akademik & non-akademik bersama SABDA.",
+          status: "Upcoming",
+        },
+      ],
+    },
+    {
+      dept: "Departemen Humas",
+      proker: [
+        {
+          nama: "G2G (Give To Glow)",
+          desc: "Penggalangan donasi untuk yang membutuhkan. (3 bulan sekali / opsional).",
+          status: "Completed",
+        },
+        {
+          nama: "GAV (Gerak Aksi Visual)",
+          desc: "Konten sosial berbentuk poster/video. (Kolaborasi dengan IPTEK).",
+          status: "Upcoming",
+        },
+        {
+          nama: "SENJA",
+          desc: "Berbagi makanan sehat. (Kolaborasi dengan Agama).",
+          status: "Upcoming",
+        },
+      ],
+    },
+    {
+      dept: "Departemen IPTEK",
+      proker: [
+        {
+          nama: "Konten OSIS",
+          desc: "Publikasi kegiatan seluruh departemen.",
+          status: "On Going",
+        },
+        {
+          nama: "GAV",
+          desc: "Publikasi konten sosial bersama Humas.",
+          status: "Upcoming",
+        },
+        {
+          nama: "BIZ (Baitul Maal Quiz)",
+          desc: "Kuis interaktif bersama SABDA.",
+          status: "On Going",
+        },
+        {
+          nama: "BaiMalPedia",
+          desc: "Konten literasi dan ensiklopedia sekolah.",
+          status: "On Going",
+        },
+        {
+          nama: "BEST on Vlog",
+          desc: "Dokumentasi kegiatan bersama BPH.",
+          status: "Upcoming",
+        },
+        {
+          nama: "Podcast OSIS",
+          desc: "Program diskusi inspiratif bersama BPH.",
+          status: "Upcoming",
+        },
+      ],
+    },
+    {
+      dept: "Departemen Lingkup",
+      proker: [
+        {
+          nama: "Karya Tulis Lingkungan",
+          desc: "Pembuatan karya tulis tentang isu lingkungan untuk meningkatkan wawasan dan kesadaran siswa akan pentingnya menjaga lingkungan.",
+          status: "Upcoming",
+        },
+        {
+          nama: "Be a Smart Talk",
+          desc: "Pembuatan poster mengenai isu-isu lingkungan yang dipublikasikan di mading dan setiap kelas.",
+          status: "On Going",
+        },
+        {
+          nama: "Bersih-Bersih Lapangan & Vertical Garden ",
+          desc: "Kegiatan rutin setiap departemen untuk membersihkan lapangan dan vertical garden secara bergilir.",
+          status: "Upcoming",
+        },
+        {
+          nama: "Lomba Kelas Terbersih",
+          desc: "Kompetisi kebersihan antar kelas untuk menumbuhkan kesadaran dan tanggung jawab menjaga lingkungan sekolah.",
+          status: "Upcoming",
+        },
+      ],
+    },
+  ];
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="bg-white text-slate-900"
+      className="bg-slate-50 text-slate-900"
     >
       <div id="home" className="min-h-screen">
         {/* --- HERO SECTION --- */}
-        <section id="beranda" className="pt-32 pb-20 relative overflow-hidden">
+        <section
+          id="beranda"
+          className="pt-32 pb-20 relative overflow-hidden bg-white"
+        >
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
             <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-50 rounded-full blur-[100px] opacity-70"></div>
           </div>
@@ -63,7 +283,7 @@ export default function LandingPage({ onEnterPortal }: LandingProps) {
             >
               <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full scale-150 animate-pulse"></div>
               <img
-                src="/logo.png"
+                src="/logo.jpeg"
                 alt="Logo"
                 className="w-32 h-32 md:w-48 md:h-48 object-contain relative z-10 drop-shadow-xl"
               />
@@ -122,40 +342,40 @@ export default function LandingPage({ onEnterPortal }: LandingProps) {
         {/* --- VISI & MISI --- */}
         <section className="py-10 px-6 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div
-            whileHover={{ y: -10 }}
+            whileHover={{ y: -5 }}
             className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300"
           >
             <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-inner">
               <Target size={30} />
             </div>
-            <h3 className="text-3xl font-black mb-4 uppercase tracking-tight">
+            <h3 className="text-3xl font-black mb-4 uppercase tracking-tight text-slate-900">
               Visi
             </h3>
             <p className="text-slate-600 font-medium text-lg leading-relaxed">
               Mewujudkan OSIS yang berlandaskan budi pekerti luhur serta menjadi
-              teladan bagi seluruh siswa/i melalui kegiatan kreatif &
-              bermanfaat.
+              teladan bagi seluruh siswa/i. OSIS hadir sebagai wadah aktif untuk
+              menampung aspirasi, pendapat, dan mengembangkan minat bakat
+              melalui berbagai kegiatan kreatif & bermanfaat.
             </p>
           </motion.div>
 
           <motion.div
-            whileHover={{ y: -10 }}
+            whileHover={{ y: -5 }}
             className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300"
           >
             <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-8 shadow-inner">
               <Award size={30} />
             </div>
-            <h3 className="text-3xl font-black mb-4 uppercase tracking-tight">
+            <h3 className="text-3xl font-black mb-4 uppercase tracking-tight text-slate-900">
               Misi
             </h3>
             <ul className="text-slate-600 space-y-4 font-semibold text-lg">
               {[
-                "Membangun budaya akhlak mulia.",
-                "Menjadi contoh disiplin & etika.",
-                "Ruang komunikasi aktif.",
-                "Wadah kreatif ide positif.",
-                "Partisipasi aktif masyarakat.",
-                "Membangun kerja sama tim.",
+                "Membangun budaya organisasi yang menjunjung akhlak mulia & kepemimpinan yang menginspirasi.",
+                "Menjadikan anggota OSIS sebagai contoh dalam disiplin, etika, & tanggung jawab.",
+                "Menyediakan ruang komunikasi aktif untuk menyalurkan aspirasi dan pendapat siswa.",
+                "Menjadi wadah kreatif untuk menampung minat, bakat, & ide positif siswa/i SMPIP.",
+                "Meningkatkan partisipasi aktif dalam kegiatan sekolah maupun masyarakat.",
               ].map((misi, i) => (
                 <li key={i} className="flex gap-3 items-start">
                   <span className="text-blue-500 font-black">{i + 1}.</span>{" "}
@@ -175,10 +395,9 @@ export default function LandingPage({ onEnterPortal }: LandingProps) {
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:40px_40px]"></div>
           </div>
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            variants={containerVariants}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
             className="max-w-6xl mx-auto px-6 text-center relative z-10"
           >
             <h2 className="text-3xl font-black mb-16 uppercase tracking-[0.2em] text-blue-400">
@@ -188,50 +407,50 @@ export default function LandingPage({ onEnterPortal }: LandingProps) {
               {[
                 { n: "7", t: "Seksi Departemen" },
                 { n: "34", t: "Pengurus OSIS BEST" },
-                { n: "15+", t: "Program Kerja" },
-                { n: "250+", t: "Siswa Terlibat" },
+                { n: "20+", t: "Program Kerja" },
+                { n: "200+", t: "Siswa Terlibat" },
               ].map((stat, i) => (
-                <motion.div key={i} variants={itemVariants}>
+                <div key={i}>
                   <p className="text-6xl font-black mb-3 text-white">
                     {stat.n}
                   </p>
                   <p className="text-blue-400 font-bold text-xs uppercase tracking-widest">
                     {stat.t}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
         </section>
 
-        {/* --- BERITA & PROKER (BAGIAN NAVIGASI PENTING) --- */}
+        {/* --- BERITA & PROKER (DIPERBAIKI LAYOUTNYA) --- */}
         <section
           id="berita"
-          className="py-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16 scroll-mt-24"
+          className="py-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 scroll-mt-24"
         >
+          {/* KOLOM KIRI: UPDATE PENGUMUMAN (Lebar 4 kolom) */}
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            className="lg:col-span-2"
+            className="lg:col-span-4"
           >
-            <h3 className="text-3xl font-black mb-10 flex items-center gap-3">
-              <Bell className="text-blue-600" size={32} /> BERITA TERBARU
+            <h3 className="text-3xl font-black mb-8 flex items-center gap-3 text-slate-900">
+              <Bell className="text-blue-600" size={32} /> UPDATE
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-6 sticky top-32">
               {/* LINK KE PENDAFTARAN */}
               <Link href="/pendaftaran" className="block group">
-                <div className="h-full bg-white p-8 rounded-3xl shadow-sm border border-slate-100 group-hover:border-blue-500 group-hover:shadow-2xl transition-all duration-300">
+                <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 group-hover:border-blue-500 group-hover:shadow-xl transition-all duration-300">
                   <span className="text-[10px] font-black bg-blue-50 text-blue-600 px-3 py-1 rounded-full uppercase tracking-wider">
                     PENGUMUMAN
                   </span>
-                  <h4 className="text-xl font-bold mt-4 group-hover:text-blue-600 leading-tight">
-                    Open Recruitment BEST Baru Telah Dibuka!
+                  <h4 className="text-xl font-bold mt-4 group-hover:text-blue-600 leading-tight text-slate-800">
+                    Open Recruitment BEST Baru Akan Segera Dibuka!
                   </h4>
-                  <p className="text-slate-500 mt-3 font-medium">
-                    Klik di sini untuk melihat syarat dan cara pendaftaran
-                    online.
+                  <p className="text-slate-500 mt-3 font-medium text-sm">
+                    Klik di sini untuk melihat syarat dan pendaftaran online.
                   </p>
                   <div className="mt-4 flex items-center gap-2 text-blue-600 font-bold text-xs">
                     LIHAT DETAIL <ArrowRight size={14} />
@@ -241,16 +460,15 @@ export default function LandingPage({ onEnterPortal }: LandingProps) {
 
               {/* LINK KE ASPIRASI */}
               <Link href="/aspirasi" className="block group">
-                <div className="h-full bg-white p-8 rounded-3xl shadow-sm border border-slate-100 group-hover:border-emerald-500 group-hover:shadow-2xl transition-all duration-300">
+                <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 group-hover:border-emerald-500 group-hover:shadow-xl transition-all duration-300">
                   <span className="text-[10px] font-black bg-emerald-50 text-emerald-600 px-3 py-1 rounded-full uppercase tracking-wider">
                     ASPIRASI
                   </span>
-                  <h4 className="text-xl font-bold mt-4 group-hover:text-emerald-600 leading-tight">
+                  <h4 className="text-xl font-bold mt-4 group-hover:text-emerald-600 leading-tight text-slate-800">
                     Sampaikan Aspirasimu Lewat Kotak Suara Online!
                   </h4>
-                  <p className="text-slate-500 mt-3 font-medium">
-                    Punya ide kegiatan atau saran untuk sekolah? Kirim langsung
-                    di sini.
+                  <p className="text-slate-500 mt-3 font-medium text-sm">
+                    Punya ide kegiatan atau saran untuk sekolah?
                   </p>
                   <div className="mt-4 flex items-center gap-2 text-emerald-600 font-bold text-xs">
                     KIRIM SUARA <ArrowRight size={14} />
@@ -260,31 +478,84 @@ export default function LandingPage({ onEnterPortal }: LandingProps) {
             </div>
           </motion.div>
 
+          {/* KOLOM KANAN: LIST PROGRAM KERJA (Lebar 8 kolom, Lebih Lega) */}
           <motion.div
             initial={{ x: 30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
+            className="lg:col-span-8"
           >
-            <h3 className="text-3xl font-black mb-10 flex items-center gap-3">
-              <Star className="text-yellow-500" size={32} /> PROKER UNGGULAN
+            <h3 className="text-3xl font-black mb-8 flex items-center gap-3 text-slate-900">
+              <Star className="text-yellow-500" size={32} /> PROGRAM KERJA
             </h3>
-            <div className="p-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-[2.5rem] text-white shadow-xl relative overflow-hidden">
-              <h4 className="text-2xl font-black uppercase italic mb-2">
-                BM CUP 2026
-              </h4>
-              <p className="text-orange-50 font-medium leading-relaxed">
-                Turnamen akbar olahraga dan seni antar sekolah se-Tangerang
-                Selatan.
-              </p>
-              <Star
-                size={100}
-                className="absolute -right-5 -bottom-5 text-white/20 rotate-12"
-              />
+
+            {/* Box tanpa scroll, memanjang natural ke bawah */}
+            <div className="space-y-6">
+              {dataProker.map((dept, index) => (
+                <details
+                  key={index}
+                  className="group bg-white border border-slate-200 shadow-sm rounded-[2rem] p-6 md:p-8 cursor-pointer hover:shadow-md transition-all overflow-hidden"
+                >
+                  <summary className="font-black text-slate-800 text-lg md:text-xl uppercase tracking-widest list-none flex justify-between items-center outline-none">
+                    <div className="flex items-center gap-4">
+                      <div className="w-2 h-8 bg-blue-500 rounded-full"></div>
+                      {dept.dept}
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center flex-shrink-0 group-open:rotate-180 transition-transform border border-slate-100">
+                      <ChevronDown size={20} className="text-slate-500" />
+                    </div>
+                  </summary>
+
+                  <div className="mt-8 space-y-4 pt-6 border-t border-slate-100 cursor-default">
+                    {dept.proker.map((p, idx) => {
+                      let statusStyle = "";
+                      let dotStyle = "";
+                      if (p.status === "Completed") {
+                        statusStyle =
+                          "bg-emerald-50 text-emerald-700 border-emerald-100";
+                        dotStyle = "bg-emerald-500";
+                      } else if (p.status === "On Going") {
+                        statusStyle =
+                          "bg-blue-50 text-blue-700 border-blue-100";
+                        dotStyle = "bg-blue-500 animate-pulse";
+                      } else {
+                        statusStyle =
+                          "bg-amber-50 text-amber-700 border-amber-100";
+                        dotStyle = "bg-amber-500";
+                      }
+
+                      return (
+                        <div
+                          key={idx}
+                          className="flex flex-col md:flex-row md:items-start justify-between gap-4 p-5 md:p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors"
+                        >
+                          <div className="flex-1 pr-4">
+                            <h5 className="font-bold text-slate-800 mb-2 text-base">
+                              {p.nama}
+                            </h5>
+                            <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                              {p.desc}
+                            </p>
+                          </div>
+                          <div
+                            className={`flex items-center gap-2 px-4 py-2 rounded-xl border text-[10px] font-black uppercase tracking-widest shrink-0 w-fit ${statusStyle}`}
+                          >
+                            <span
+                              className={`w-2 h-2 rounded-full ${dotStyle}`}
+                            ></span>
+                            {p.status}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </details>
+              ))}
             </div>
           </motion.div>
         </section>
 
-        {/* --- STRUKTUR ORGANISASI (LENGKAP SEMUA NAMA) --- */}
+        {/* --- STRUKTUR ORGANISASI --- */}
         <section
           id="struktur"
           className="py-24 bg-white scroll-mt-24 border-t border-slate-100"
@@ -345,7 +616,7 @@ export default function LandingPage({ onEnterPortal }: LandingProps) {
               ))}
             </div>
 
-            {/* SEMUA DEPARTEMEN TANPA DIKURANGI */}
+            {/* SEMUA DEPARTEMEN */}
             <div className="space-y-24">
               {[
                 {
@@ -568,7 +839,7 @@ export default function LandingPage({ onEnterPortal }: LandingProps) {
           className="py-24 bg-slate-50 px-6 border-t border-slate-200"
         >
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-black text-center mb-16 uppercase italic tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 text-center mb-16 uppercase italic tracking-tight">
               {" "}
               Tanya <span className="text-blue-600">Jawab</span>{" "}
             </h2>
@@ -584,18 +855,30 @@ export default function LandingPage({ onEnterPortal }: LandingProps) {
                 },
                 {
                   q: "Bagaimana alur pendaftaran anggota baru?",
-                  a: "Alur pendaftaran meliputi pengisian formulir online melalui portal ini, seleksi berkas, tes tertulis, serta tes wawancara.",
+                  a: "Alur pendaftaran meliputi pengisian formulir online melalui portal ini, seleksi berkas, serta tes wawancara.",
                 },
                 {
                   q: "Apa saja keuntungan bergabung di OSIS?",
                   a: "Kamu akan belajar public speaking, manajemen waktu, cara mengelola event besar, hingga memperluas jaringan pertemanan.",
+                },
+                {
+                  q: "Apakah OSIS mengganggu akademik?",
+                  a: "Tidak. kegiatan OSIS dirancang seimbang dan tetap mengutamakan tanggung jawab akademik. Pengurus diajarkan untuk mengatur waktu dengan baik agar prestasi tetap terjaga.",
+                },
+                {
+                  q: "Bagaimana cara menyampaikan aspirasi ke OSIS?",
+                  a: "Siswa dapat menyampaikan aspirasi melalui form aspirasi di website, media sosial resmi OSIS, atau secara langsung kepada pengurus. Semua aspirasi akan ditampung dan ditindaklanjuti secara profesional.",
+                },
+                {
+                  q: "Apakah OSIS akan mendapatkan sertifikat?",
+                  a: "Ya! pengurus yang menyelesaikan masa jabatan dengan baik akan mendapatkan sertifikat sebagai bentuk apresiasi atas kontribusinya.",
                 },
               ].map((faq, i) => (
                 <motion.details
                   key={i}
                   className="group bg-white border border-slate-200 rounded-3xl p-6 cursor-pointer hover:shadow-lg transition-all overflow-hidden"
                 >
-                  <summary className="font-black text-sm uppercase tracking-tight list-none flex justify-between items-center outline-none">
+                  <summary className="text-slate-900 font-black text-sm uppercase tracking-tight list-none flex justify-between items-center outline-none">
                     <span className="pr-4">{faq.q}</span>
                     <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 group-open:rotate-180 transition-transform">
                       <ChevronDown size={18} className="text-blue-600" />

@@ -10,7 +10,8 @@
 
 body {
   /* Gradien gelap dengan nuansa ungu di pojok sesuai video */
-  background: radial-gradient(circle at 0% 0%, #1e1b4b 0%, #020617 50%),
+  background:
+    radial-gradient(circle at 0% 0%, #1e1b4b 0%, #020617 50%),
     radial-gradient(circle at 100% 100%, #4c1d95 0%, #020617 50%);
   background-attachment: fixed;
   color: white;
