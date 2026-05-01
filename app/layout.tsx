@@ -12,6 +12,14 @@ export default function RootLayout({
     <html lang="id" className="scroll-smooth">
       <head>
         <title>Website Resmi OSIS</title>
+
+        {/* --- TEMPLATE KOSONG UNTUK VERIFIKASI GOOGLE --- */}
+        {/* Masukkan KODE UNIK dari atribut content="..." di bawah ini */}
+        <meta
+          name="google-site-verification"
+          content="Xgxsg0tXtHLYS-OYs53-P-WIuuFYWIGBN0cEH4mn6OE"
+        />
+        {/* ----------------------------------------------- */}
       </head>
       <body className="antialiased">
         {/* Navigasi Global (Fixed di atas) */}
