@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="scroll-smooth">
       <head>
-        <title>Website Resmi OSIS</title>
+        <title>OSIS SMPIP Baitul Maal</title>
 
         {/* --- TEMPLATE KOSONG UNTUK VERIFIKASI GOOGLE --- */}
         {/* Masukkan KODE UNIK dari atribut content="..." di bawah ini */}
